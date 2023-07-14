@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Block Explorer",
+  "name_for_model": "blockExplorer",
+  "description_for_human": "Get current information about Ethereum account balances.",
+  "description_for_model": "Get current information about Ethereum account balances.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:5001/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "http://localhost:5001/logo.png",
+  "contact_email": "development@verklelabs.io",
+  "legal_info_url": "https://www.verklelabs.io/"
+}

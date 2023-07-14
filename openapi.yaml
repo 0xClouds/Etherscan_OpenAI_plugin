@@ -1,0 +1,51 @@
+openapi: 3.0.1
+info:
+  title: Blockchain Explorer Plugin
+  description: A plugin that allows a user to query Etherscan for information stored on the Ethereum Blockchain.
+  version: "v1"
+servers:
+  - url: http://localhost:5001
+paths:
+  /balance:
+    get:
+      operationId: getBalance
+      summary: Get the balance of an Ethereum account
+      parameters:
+        - in: query
+          name: account
+          schema:
+            type: string
+          description: Used to return an Ethereum account balance for example &address=${account} would return the balance for that Ethereum account
+      responses:
+        "200":
+          description: OK
+  /nfts:
+    get:
+      operationId: getNFTs
+      summary: Get all of the NFTs (ERC-721) tokens held by a specific ethereum account
+      parameters:
+        - in: query
+          name: account
+          schema:
+            type: string
+          description: Used to return the NFTs (ERC-721) for a specific Ethereum address for example &address=${account} would return all of the NFT tokens held in an Ethereum account
+      responses:
+        "200":
+          description: OK
+  /token_balance:
+    get:
+      operationId: getTokens
+      summary: Get all of the tokens (ERC-20) tokens held by a specific ethereum account
+      parameters:
+        - in: query
+          name: account
+          schema:
+            type: string
+        - in: query
+          name: contract
+          schema:
+            type: string
+          description: Used to return the tokens (ERC-20) for a specific Ethereum address for example &address=${account} &contract=${contract} would return all of the ERC-20 tokens held by an Ethereum account
+      responses:
+        "200":
+          description: OK
